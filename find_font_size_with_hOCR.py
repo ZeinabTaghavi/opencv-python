@@ -7,7 +7,6 @@ try:
 except:
     print('hOCR file was not found')
 
-
 imgTemp = cv2.imread('image1_Modified.jpg') # image file name
 
 tree = etree.fromstring(f)

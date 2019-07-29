@@ -13,7 +13,6 @@ imgTemp = cv2.imread('image1_Modified.jpg') # image file name
 tree = etree.fromstring(f)
 words = tree.xpath("//*[@class='ocr_line']")
 
-lines_Direction = []
 
 for w in words:
     titles = w.attrib['title'].split()

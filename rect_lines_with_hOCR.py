@@ -8,14 +8,14 @@ except:
     print('hOCR file was not found')
 
 
-imgTemp = cv2.imread('image1_Modified.jpg') # image file name
+imgTemp = cv2.imread('image1.bmp') # image file name
 
 tree = etree.fromstring(f)
-words = tree.xpath("//*[@class='ocr_line']")
+lines = tree.xpath("//*[@class='ocr_line']")
 
 
-for w in words:
-    titles = w.attrib['title'].split()
+for line in lines:
+    titles = line.attrib['title'].split()
     x1, y1, x2, y2 = int(titles[1]), int(titles[2]), int(titles[3]), int(titles[4].split(';')[0])
     imgTemp = cv2.rectangle(imgTemp , (x1 , y1) , (x2,y2) , (255,0,0) , 3)
 
